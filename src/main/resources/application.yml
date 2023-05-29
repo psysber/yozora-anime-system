@@ -1,0 +1,73 @@
+server:
+  port: 8080
+app:
+  self:
+    name: yozora
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+
+  mail:
+    host: smtp.office365.com
+    port: 587
+    username: logfrezze@hotmail.com
+    password: Hao123cc
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yozora_anime?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=True&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+
+
+      #最大连接数，默认是 10
+
+      maximum-pool-size: 12
+
+      #最小空闲连接数
+
+      minimum-idle: 5
+
+      #连接的超时时间，默认30000 (毫秒)
+
+      connection-timeout: 60000
+
+      #空闲连接最大存活时间（毫秒）
+
+      idle-timeout: 60000
+
+      #池中连接的最长生命周期，值 0 表示无限生命周期（毫秒）
+
+      max-lifetime: 600000
+
+      #连接到数据库时等待最长时间(秒)
+
+      login-timeout: 15
+  redis:
+    port: 6379
+    host: 127.0.0.1
+    timeout: 5000ms
+seimi:
+  crawler:
+    names: basic
+    enabled: false
+jwt:
+  secret: 46f53cdb15d346b6b5f59cf944cbf634sdfasdfwefer23rsdfiuiouuio77oiouiouo78675589etm6754674jk
+  expiration: 86400000
+mybatis-plus:
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapperLocations: classpath:mapper/**/*.xml

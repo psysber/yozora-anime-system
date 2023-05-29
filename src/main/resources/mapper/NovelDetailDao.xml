@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yozora.anime.dao.NovelDetailDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.yozora.anime.entity.NovelDetailEntity" id="NovelDetailMap">
+
+        <result property="id" column="id"/>
+        <result property="bookId" column="book_id"/>
+        <result property="commentNum" column="comment_num"/>
+        <result property="collectNum" column="collect_num"/>
+        <result property="hitNum" column="hit_num"/>
+        <result property="status" column="status"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+
+
+</mapper>
